@@ -8,10 +8,10 @@ router.route("/").get((req, res) => {
 });
 
 router.route("/add").post((req, res) => {
-  const pass = req.body.pass;
+  const result = req.body.result;
 
   const newTest = new Test({
-    pass,
+    result,
   });
 
   newTest

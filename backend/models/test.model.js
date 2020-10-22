@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 
 const testSchema = new Schema(
     {
-        pass: {type: Boolean, required:true}
+        result: {type: String, required:true}
     }
 );
 

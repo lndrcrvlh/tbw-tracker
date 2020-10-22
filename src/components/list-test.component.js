@@ -5,7 +5,7 @@ import axios from "axios";
 
 const Test = (props) => (
   <tr>
-    <td>{props.test.pass.toString()}</td>
+    <td>{props.test.result}</td>
     <td>{props.test._id}</td>
   </tr>
 );
@@ -30,8 +30,7 @@ export default class TestsList extends Component {
 
   testsList() {
     return this.state.tests.map((currentTest) => {
-      console.log(currentTest.pass)
-      return <Test test={currentTest} passed={currentTest.pass} key={currentTest._id} />;
+      return <Test test={currentTest} result={currentTest.result} key={currentTest._id} />;
     });
   }
 
@@ -42,7 +41,7 @@ export default class TestsList extends Component {
         <table className="table">
           <thead className="thead-light">
             <tr>
-              <th>pass?</th>
+              <th>Result</th>
               <th>id</th>
             </tr>
           </thead>

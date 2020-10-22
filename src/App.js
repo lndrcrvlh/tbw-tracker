@@ -1,8 +1,6 @@
 import React from 'react';
-//import logo from './logo.svg';
 import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import './App.css';
 
 import CreateTest from "./components/create-test.component";
 import Navbar from "./components/navbar.component";
