@@ -15,6 +15,11 @@ export default class Navbar extends Component {
                 Tests
               </Link>
             </li>
+            <li className="navbar-item">
+              <Link to="/add_behavior" className="nav-link">
+                Add A Behavior
+              </Link>
+            </li>
             <li>
               <Link to="/create" className="nav-link">
                 Create Test Log

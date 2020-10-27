@@ -23,6 +23,10 @@ connection.once("open", () => {
 });
 
 const testsRouter = require("./routes/tests");
+//const studentsRouter = require("./routes/student");
+const behaviorRouter = require("./routes/behavior");
+app.use("/behaviors", behaviorRouter);
+//app.use("/students", studentsRouter);
 app.use("/tests", testsRouter);
 
 app.listen(port, () => {

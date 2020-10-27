@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component,useState } from "react";
 import axios from "axios";
 
 export default class CreateTest extends Component {
@@ -12,6 +12,7 @@ export default class CreateTest extends Component {
       result: "pass",
     };
   }
+  
 
   onChangeResult(e) {
     this.setState({
@@ -37,6 +38,7 @@ export default class CreateTest extends Component {
 
   render() {
     return (
+      
       <div>
         <h3>First Test of adding data</h3>
         {/* <form>
