@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 
 import Navbar from "./components/navbar.component";
 import ListBehavior from "./components/behavior-list.component"
+import ListStudent from "./components/student-list.component"
 import CreateBehavior from "./components/behavior-create.component"
 import CreateStudent from "./components/student-create.component"
 
@@ -14,6 +15,7 @@ function App() {
         <Navbar />
         <br/>
         <Route path="/" exact component={ListBehavior} />
+        <Route path="/students" component={ListStudent}/>
         <Route path="/add_behavior" component={CreateBehavior}/>
         <Route path="/add_student" component={CreateStudent} />
       </div>

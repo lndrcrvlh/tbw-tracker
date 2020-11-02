@@ -16,6 +16,11 @@ export default class Navbar extends Component {
               </Link>
             </li>
             <li className="navbar-item">
+              <Link to="/students" className="nav-link">
+                Alunos
+              </Link>
+            </li>
+            <li className="navbar-item">
               <Link to="/add_behavior" className="nav-link">
                 Criar Programa
               </Link>
