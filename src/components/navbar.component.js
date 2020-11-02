@@ -12,17 +12,17 @@ export default class Navbar extends Component {
           <ul className="navbar-nav mr-auto">
             <li className="navbar-item">
               <Link to="/" className="nav-link">
-                Tests
+                Programas
               </Link>
             </li>
             <li className="navbar-item">
               <Link to="/add_behavior" className="nav-link">
-                Add A Behavior
+                Criar Programa
               </Link>
             </li>
             <li>
-              <Link to="/create" className="nav-link">
-                Create Test Log
+              <Link to="/add_student" className="nav-link">
+                Adicionar Aluno
               </Link>
             </li>
           </ul>

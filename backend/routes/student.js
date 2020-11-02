@@ -1,21 +1,22 @@
-const mongoose = require("mongoose");
+const router = require("express").Router();
+let Student = require("../models/student.model");
 
-const Schema = mongoose.Schema;
+router.route("/").get((req, res) => {
+  Student.find()
+    .then((students) => res.json(students))
+    .catch((err) => res.status(400).json("Error: " + err));
+});
 
-const studentSchema = new Schema(
-  {
-    student_name: {
-      type: String,
-      required: true,
-      unique: true,
-      trim: true
-    },s_age: {type: Number},
-    behaviors_training:{
-        behavior_id: []
-    }
-  }
-);
+router.route("/add").post((req, res) => {
+  const s_name = req.body.s_name;
+  const s_age = req.body.s_age;
 
-const User = mongoose.model('User', userSchema);
+  const newStudent = new Student({ s_name, s_age });
 
-module.exports = User;
+  newStudent
+    .save()
+    .then(() => res.json("Student added!"))
+    .catch((err) => res.status(400).json("Error: " + err));
+});
+
+module.exports = router;
