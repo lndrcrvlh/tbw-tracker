@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 
 import CreateTest from "./components/create-test.component";
 import Navbar from "./components/navbar.component";
-import TestsList from "./components/list-test.component"
+import ListBehavior from "./components/behavior-list.component"
 import CreateBehavior from "./components/behavior-create.component"
 
 function App() {
@@ -13,7 +13,7 @@ function App() {
       <div className="container">
         <Navbar />
         <br/>
-        <Route path="/" exact component={TestsList} />
+        <Route path="/" exact component={ListBehavior} />
         <Route path="/add_behavior" component={CreateBehavior}/>
         <Route path="/create" component={CreateTest} />
       </div>
