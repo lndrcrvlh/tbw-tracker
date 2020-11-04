@@ -5,6 +5,11 @@ export default class StudentProgress extends Component {
   constructor(props) {
     super(props);
 
+    this.onChangeStudent = this.onChangeStudent.bind(this);
+    this.onChangeStudents = this.onChangeStudents.bind(this);
+    this.onChangeBehavior = this.onChangeBehavior.bind(this);
+    this.onChangeBehaviors = this.onChangeBehaviors.bind(this);
+
     this.state = {
       student: {},
       behavior: {},
@@ -20,6 +25,30 @@ export default class StudentProgress extends Component {
 
   getBehaviors() {
     return axios.get("http://localhost:5000/behaviors");
+  }
+
+  onChangeStudents(e) {
+    this.setState({
+      students: e.target.value,
+    });
+  }
+
+  onChangeStudent(e) {
+    this.setState({
+      student: e.target.value,
+    });
+  }
+
+  onChangeBehavior(e) {
+    this.setState({
+      behavior: e.target.value,
+    });
+  }
+
+  onChangeBehaviors(e) {
+    this.setState({
+      behaviors: e.target.value,
+    });
   }
 
   componentDidMount() {
@@ -49,6 +78,26 @@ export default class StudentProgress extends Component {
     return (
       <div>
         <h3>Create a relationship</h3>
+        <form>
+          <div>
+            <label>Alunos: </label>
+            <select
+              ref="userInput"
+              required
+              className="form-control"
+              //value={this.state.student.s_name}
+              onChange={this.onChangeStudents}
+            >
+              {this.state.students.map((s) => {
+                return (
+                  <option key={s} value={s}>
+                    {s}
+                  </option>
+                );
+              })}
+            </select>
+          </div>
+        </form>
       </div>
     );
   }
