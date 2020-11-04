@@ -24,8 +24,10 @@ connection.once("open", () => {
 
 const studentsRouter = require("./routes/student");
 const behaviorRouter = require("./routes/behavior");
+const progressRouter = require("./routes/progress");
 app.use("/behaviors", behaviorRouter);
 app.use("/students", studentsRouter);
+app.use("/progress", progressRouter);
 
 app.listen(port, () => {
   console.log(`server is running on port: ${port}`);

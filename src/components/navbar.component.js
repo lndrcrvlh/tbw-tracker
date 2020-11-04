@@ -30,6 +30,11 @@ export default class Navbar extends Component {
                 Adicionar Aluno
               </Link>
             </li>
+            <li>
+              <Link to="/track_progress" className="nav-link">
+                Track Progress
+              </Link>
+            </li>
           </ul>
         </div>
       </nav>
