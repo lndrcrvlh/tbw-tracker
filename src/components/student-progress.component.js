@@ -6,12 +6,9 @@ export default class StudentProgress extends Component {
     super(props);
 
     this.state = {
-      s_id: "",
-      b_id: "",
-      num_passed: "",
-      num_failed: "",
-      times_tested: "",
-      phase: "",
+      student: {},
+      behavior: {},
+      trials: {},
       students: [],
       behaviors: [],
     };
@@ -30,30 +27,29 @@ export default class StudentProgress extends Component {
       if (response[1].data.length) {
         this.setState({
           students: response[0].data.map((student) => student.s_name),
-          s_id: response[0].data[0].s_name,
+          student: {
+            s_name: response[0].data[0].s_name,
+            s_id: response[0].data[0]._id,
+          },
         });
       }
       if (response[1].data.length) {
         this.setState({
           behaviors: response[1].data.map((behavior) => behavior.name),
-          b_id: response[1].data[0].name,
+          behavior: {
+            b_name: response[1].data[0].name,
+            b_id: response[1].data[0]._id,
+          },
         });
       }
     });
   }
 
-  //   componentDidMount() {
-  //     axios.get("http://localhost:5000/students").then((response) => {
-  //       if (response.data.length > 0) {
-  //         this.setState({
-  //           students: response.data.map((student) => student.s_name),
-  //           s_id: response.data[0].s_name,
-  //         });
-  //       }
-  //     });
-  //   }
-
   render() {
-    return <div></div>;
+    return (
+      <div>
+        <h3>Create a relationship</h3>
+      </div>
+    );
   }
 }

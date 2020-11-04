@@ -8,20 +8,14 @@ router.route("/").get((req, res) => {
 });
 
 router.route("/add").post((req, res) => {
-  const s_id = req.body.s_id;
-  const b_id = req.body.b_id;
-  const num_passed = req.body.num_passed;
-  const num_failed = req.body.num_failed;
-  const times_tested = req.body.times_tested;
-  const phase = req.body.phase;
-
+  const student = req.body.student;
+  const behavior = req.body.behavior;
+  const trials = req.body.trials;
+  
   const newProgress = new Progress({
-    s_id,
-    b_id,
-    num_passed,
-    num_failed,
-    times_tested,
-    phase,
+    student,
+    behavior,
+    trials
   });
 
   newProgress
@@ -29,5 +23,7 @@ router.route("/add").post((req, res) => {
     .then(() => res.json("Progress added!"))
     .catch((err) => res.status(400).json("Error: " + err));
 });
+
+
 
 module.exports = router;
