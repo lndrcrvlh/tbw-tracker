@@ -3,8 +3,8 @@ import axios from "axios";
 
 
 const Student = (props) => (
-  <tr>
-    <td>{props.student.s_id}</td>
+  <tr className="bg-dark text-light">
+    <td>{props.student.s_name}</td>
     <td>{props.student.s_age}</td>
   </tr>
 );
@@ -34,7 +34,7 @@ class ListStudent extends Component {
       return (
         <Student
           student={currentStudent}
-          s_id={currentStudent.s_id}
+          s_id={currentStudent.s_name}
           s_age={currentStudent.s_age}
         />
       );
@@ -43,7 +43,7 @@ class ListStudent extends Component {
 
   render() {
     return (
-      <div>
+      <div className="bg-dark text-light" >
         <h3>Alunos</h3>
         <table className="table">
           <thead className="thead-light">

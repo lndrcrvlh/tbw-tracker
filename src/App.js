@@ -12,7 +12,7 @@ import StudentProgress from "./components/student-progress.component";
 function App() {
   return (
     <Router>
-      <div className="container">
+      <div className="container bg-dark text-light">
         <Navbar />
         <br />
         <Route path="/" exact component={ListBehavior} />

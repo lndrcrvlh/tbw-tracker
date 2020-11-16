@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import axios from "axios";
 
 const Behavior = (props) => (
-  <tr>
+  <tr className="bg-dark text-light">
     <td>{props.behavior.name}</td>
     <td>{props.behavior.objective}</td>
     <td>{props.behavior.setting}</td>
@@ -53,7 +53,7 @@ class ListBehavior extends Component {
 
   render() {
     return (
-      <div>
+      <div className="bg-dark text-light" >
         <h3>Behaviors</h3>
         <table className="table">
           <thead className="thead-light">
