@@ -2,12 +2,12 @@ import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
-import Navbar from "./components/navbar.component";
-import ListBehavior from "./components/behavior-list.component";
-import ListStudent from "./components/student-list.component";
-import CreateBehavior from "./components/behavior-create.component";
-import CreateStudent from "./components/student-create.component";
-import StudentProgress from "./components/student-progress.component";
+import Navbar from "./navbar.component";
+import ListBehavior from "./behavior-list.component";
+import ListStudent from "./student-list.component";
+import CreateBehavior from "./behavior-create.component";
+import CreateStudent from "./student-create.component";
+import StudentProgress from "./student-progress.component";
 
 function App() {
   return (
