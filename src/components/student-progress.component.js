@@ -6,6 +6,8 @@ export default class StudentProgress extends Component {
   constructor(props) {
     super(props);
 
+    this.onSubmit = this.onSubmit.bind(this);
+
     this.state = {
       selectBehaviors: [],
       b_name: "",
@@ -13,6 +15,7 @@ export default class StudentProgress extends Component {
       selectStudents: [],
       s_name: "",
       s_id: "",
+      trials: [],
     };
   }
 
@@ -38,6 +41,33 @@ export default class StudentProgress extends Component {
     }));
 
     this.setState({ selectBehaviors: behaviors });
+  }
+
+  onSubmit(e) {
+    e.preventDefault();
+
+    const progress = {
+      student: {
+        s_name: this.state.s_name,
+        s_id: this.state.s_id,
+      },
+      behavior: {
+        b_name: this.state.b_name,
+        b_id: this.state.b_id,
+      },
+      trials: [],
+    };
+
+    console.log(progress);
+
+    axios
+      .post("http://localhost:5000/progress/add", progress)
+      .then((res) => console.log(res.data))
+      .catch((err) => console.log(err));
+
+    // this.setState({
+    //   this.
+    // })
   }
 
   handleChangeBehavior(e) {
@@ -73,7 +103,7 @@ export default class StudentProgress extends Component {
           You have selected <strong>{this.state.b_name}</strong> whose id is{" "}
           <strong>{this.state.b_id}</strong>
         </p>
-        
+        <input type="button" onClick={this.onSubmit} value="submit progress" />
       </div>
     );
   }
