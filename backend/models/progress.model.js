@@ -11,7 +11,7 @@ const ProgressSchema = new Schema({
     b_id: { type: String, required: true },
     b_name: { type: String, required: true },
   },
-  trials:{type: Array, default:[]}, //eventually [{passed: 3, failed:2, phase: 1}]
+  trials:{type: Array, default:[]}, //eventually [{passed: 3, failed:2, phase: 1},{passed: 2, failed:3, phase: 1}]
 });
 
 const Progress = mongoose.model("Progress", ProgressSchema);
